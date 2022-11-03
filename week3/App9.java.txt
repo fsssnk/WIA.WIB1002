@@ -1,0 +1,87 @@
+/*
+ * Arraylist using library
+ * one of JAVA Collection Framework
+ */
+package ds2021;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/**
+ *
+ * @author Zati
+ */
+public class App9 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        ////// BEFORE JAVA 5 (2004) //////
+        ArrayList list = new ArrayList();
+        list.add("apple");      // goes to index 0
+        list.add("banana");     // index 1
+        list.add("orange");     // index 2
+        
+        // to access the list element at index 1
+        list.get(1);
+        
+        // to print out using String
+        String fruit = (String)list.get(1);     // error because cannot convert from Object to String
+        System.out.println(fruit);
+        
+        
+        // After 2004, JAVA released GENERICS
+        ArrayList<String> list2 = new ArrayList<String>();
+        list2.add("Cat");
+        list2.add("Dog");
+        list2.add("Sheep");
+        
+        String animal = list2.get(0);
+        System.out.println(animal);
+        
+        // Generics can also take in more than one parameter
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        
+        ArrayList<Integer> numbers = new ArrayList<Integer>();      // cannot use primitive data types like int, float, double
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        System.out.println(numbers.get(2));
+        
+        // using for loop to loop through the list
+        System.out.println("Looping through numbers list:");
+        for(int i=0; i<numbers.size(); i++){
+            System.out.println(numbers.get(i));
+        }
+        
+        // A neat trick to iterate is by using Type of things in our numbers list with value:listName
+        System.out.println("Looping using Type");
+        for(Integer value:numbers ){
+            System.out.println(value);
+        }
+        
+        // removing elements from an array
+        numbers.remove(0);      // slow way to remove
+  
+        
+        // A neat trick to iterate is by using Type of things in our numbers list with value:listName
+        System.out.println("Looping using Type");
+        for(Integer value:numbers ){
+            System.out.println(value);
+        }
+        
+        System.out.println("numbers size = " + numbers.size());
+        numbers.remove(numbers.size()-1);       // which index??
+        
+        
+        // A neat trick to iterate is by using Type of things in our numbers list with value:listName
+        System.out.println("Looping using Type");
+        for(Integer value:numbers ){
+            System.out.println(value);
+        }
+        
+    }
+    
+}
