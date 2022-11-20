@@ -128,4 +128,9 @@ public class MyQueue<E> implements MyQueueInterface<E>{
     public void displayArrow(){
         Arrays.stream(elements).filter(o -> o!=null).forEach(o -> System.out.print(o + " --> "));
     }
+    public MyQueue<E> copy(){
+        MyQueue<E> temp = new MyQueue<>();
+        Arrays.stream(elements).forEach(o -> temp.enqueue(o));
+        return temp;
+    }
 }
