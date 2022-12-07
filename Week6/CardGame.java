@@ -9,7 +9,7 @@ public class CardGame {
     }
     private static void main(){
         String[] colors = {"Red", "Green", "Blue", "Yellow"};
-        HashMap<String, Integer> configuration= new HashMap<>();
+
         MyQueue<String> p1Log = new MyQueue<>();
         p1Log.enqueue("Player 1 Card\n");
         MyQueue<String> p2Log = new MyQueue<>();
